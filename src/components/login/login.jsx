@@ -1,7 +1,13 @@
-import React from 'react';
+import React from "react";
 
-const Login = (props) => (
-      
+const Login = (props) => {
+  return (
+    <section>
+      <h1>Login</h1>
+      <button>Google</button>
+      <button>Github</button>
+    </section>
   );
+};
 
 export default Login;
