@@ -4,6 +4,8 @@ import Footer from "../footer/footer";
 import Header from "../header/header";
 import { useEffect } from "react";
 import { useHistory } from "react-router-dom";
+import Editor from "../editor/editor";
+import Preview from "../preview/preview";
 
 const Main = ({ authService }) => {
   const history = useHistory();
@@ -18,10 +20,14 @@ const Main = ({ authService }) => {
       }
     });
   });
+
   return (
     <section className={styles.main}>
       <Header onLogout={onLogout} />
-      <h1>Main</h1>
+      <div className={styles.container}>
+        <Editor />
+        <Preview />
+      </div>
       <Footer />
     </section>
   );

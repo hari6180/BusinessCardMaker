@@ -1,0 +1,25 @@
+@value makerWhite, makerLightGrey from '../../common/colors.css';
+@value mediaQuery from '../../common/size.css';
+
+p {
+  margin: 0;
+  padding: 1rem 0;
+}
+
+.main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  flex: 1;
+  display: flex;
+}
+
+@media screen and (max-width: mediaQuery) {
+  .container {
+    flex-direction: column;
+  }
+}
