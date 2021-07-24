@@ -8,7 +8,7 @@ import Editor from "../editor/editor";
 import Preview from "../preview/preview";
 import { useState } from "react";
 
-const Main = ({ authService }) => {
+const Main = ({ FileInput, authService }) => {
   const [cards, setCards] = useState({
     1: {
       id: "1",
@@ -78,6 +78,7 @@ const Main = ({ authService }) => {
       <Header onLogout={onLogout} />
       <div className={styles.container}>
         <Editor
+          FileInput={FileInput}
           cards={cards}
           addCard={CreateOrUpdateCard}
           updateCard={CreateOrUpdateCard}
