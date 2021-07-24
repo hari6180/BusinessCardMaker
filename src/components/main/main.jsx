@@ -9,8 +9,8 @@ import Preview from "../preview/preview";
 import { useState } from "react";
 
 const Main = ({ authService }) => {
-  const [cards, setCards] = useState([
-    {
+  const [cards, setCards] = useState({
+    1: {
       id: "1",
       name: "Hari",
       company: "KDB",
@@ -21,7 +21,7 @@ const Main = ({ authService }) => {
       fileName: "hari",
       fileURL: null,
     },
-    {
+    2: {
       id: "2",
       name: "Hari",
       company: "KDB",
@@ -32,7 +32,7 @@ const Main = ({ authService }) => {
       fileName: "hari",
       fileURL: null,
     },
-    {
+    3: {
       id: "3",
       name: "Hari",
       company: "KDB",
@@ -43,7 +43,7 @@ const Main = ({ authService }) => {
       fileName: "hari",
       fileURL: null,
     },
-  ]);
+  });
   const history = useHistory();
   const onLogout = () => {
     authService.logout();
@@ -57,16 +57,32 @@ const Main = ({ authService }) => {
     });
   });
 
-  const addCard = (card) => {
-    const updated = [...cards, card];
-    setCards(updated);
+  const CreateOrUpdateCard = (card) => {
+    setCards((cards) => {
+      const updated = { ...cards };
+      updated[card.id] = card;
+      return updated;
+    });
+  };
+
+  const deleteCard = (card) => {
+    setCards((cards) => {
+      const updated = { ...cards };
+      delete updated[card.id];
+      return updated;
+    });
   };
 
   return (
     <section className={styles.main}>
       <Header onLogout={onLogout} />
       <div className={styles.container}>
-        <Editor cards={cards} addCard={addCard} />
+        <Editor
+          cards={cards}
+          addCard={CreateOrUpdateCard}
+          updateCard={CreateOrUpdateCard}
+          deleteCard={deleteCard}
+        />
         <Preview cards={cards} />
       </div>
       <Footer />
