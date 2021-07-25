@@ -3,7 +3,7 @@ import styles from "./app.module.css";
 import Login from "./components/login/login";
 import Main from "./components/main/main";
 
-function App({ FileInput, authService }) {
+function App({ FileInput, authService, cardRepository }) {
   return (
     <div className={styles.app}>
       <BrowserRouter>
@@ -12,7 +12,11 @@ function App({ FileInput, authService }) {
             <Login authService={authService}></Login>
           </Route>
           <Route path="/main">
-            <Main authService={authService} FileInput={FileInput}></Main>
+            <Main
+              authService={authService}
+              FileInput={FileInput}
+              cardRepository={cardRepository}
+            ></Main>
           </Route>
         </Switch>
       </BrowserRouter>
