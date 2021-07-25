@@ -18,7 +18,6 @@ const Main = ({ FileInput, authService, cardRepository }) => {
     authService.logout();
   };
 
-  // for sync data
   useEffect(() => {
     if (!userId) {
       return;
@@ -27,9 +26,8 @@ const Main = ({ FileInput, authService, cardRepository }) => {
       setCards(cards);
     });
     return () => stopSync();
-  }, [userId]);
+  }, [userId, cardRepository]);
 
-  // for login
   useEffect(() => {
     authService.onAuthChange((user) => {
       if (user) {
@@ -38,7 +36,7 @@ const Main = ({ FileInput, authService, cardRepository }) => {
         history.push("/");
       }
     });
-  });
+  }, [authService, userId, history]);
 
   const CreateOrUpdateCard = (card) => {
     setCards((cards) => {
