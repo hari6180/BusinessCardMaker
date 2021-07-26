@@ -1,6 +1,4 @@
-import React, { memo } from "react";
-import { useState } from "react";
-import { useRef } from "react";
+import React, { memo, useState, useRef } from "react";
 import Button from "../button/button";
 import styles from "./card_add_form.module.css";
 

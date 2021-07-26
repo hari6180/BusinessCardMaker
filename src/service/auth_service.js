@@ -23,7 +23,7 @@ class AuthService {
       case "Github":
         return githubProvider;
       default:
-        throw new Error(`not supported provider : ${providerName}`);
+        throw new Error(`not supported provider: ${providerName}`);
     }
   }
 }

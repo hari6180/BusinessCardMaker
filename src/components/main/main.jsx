@@ -1,13 +1,10 @@
-import React from "react";
+import { React, useEffect, useState, useCallback } from "react";
 import styles from "./main.module.css";
 import Footer from "../footer/footer";
 import Header from "../header/header";
-import { useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import Editor from "../editor/editor";
 import Preview from "../preview/preview";
-import { useState } from "react";
-import { useCallback } from "react";
 
 const Main = ({ FileInput, authService, cardRepository }) => {
   const history = useHistory();
