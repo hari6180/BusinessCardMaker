@@ -10,3 +10,9 @@ https://hari-card-maker.netlify.app
 1. Login with your Google or Github account
 2. Save many business cards (they will be saved my databases. Don't save confidential informations!)
 3. Done! When you want to look your data, just login. Your datas always are accesible.
+
+## Dependancies
+    "firebase": "^7.20",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^5.2.0",
