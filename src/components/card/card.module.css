@@ -49,6 +49,7 @@
   margin: 0;
   font-size: 0.8rem;
   margin-bottom: 0.2em;
+  word-break: break-all;
 }
 
 .name {
@@ -74,13 +75,5 @@
     height: 5em;
     min-width: 5em;
     min-height: 5em;
-  }
-  .name,
-  .company,
-  .title,
-  .email,
-  .message {
-    width: 50%;
-    overflow-wrap: break-word;
   }
 }
