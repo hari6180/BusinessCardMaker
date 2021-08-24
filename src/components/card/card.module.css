@@ -67,3 +67,20 @@
   background-color: makerWheat;
   transform: translateY(0.5em);
 }
+
+@media screen and (max-width: 400px) {
+  .avatar {
+    width: 5em;
+    height: 5em;
+    min-width: 5em;
+    min-height: 5em;
+  }
+  .name,
+  .company,
+  .title,
+  .email,
+  .message {
+    width: 50%;
+    overflow-wrap: break-word;
+  }
+}

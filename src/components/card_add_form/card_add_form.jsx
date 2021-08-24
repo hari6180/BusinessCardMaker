@@ -48,9 +48,11 @@ const CardAddForm = memo(({ FileInput, onAdd }) => {
         placeholder="company"
       />
       <select ref={themeRef} className={styles.select} name="theme" placeholder="theme">
-        <option placeholder="light">light</option>
-        <option placeholder="dark">dark</option>
-        <option placeholder="colorful">colorful</option>
+        <optgroup label="select theme">
+          <option placeholder="light">light</option>
+          <option placeholder="dark">dark</option>
+          <option placeholder="colorful">colorful</option>
+        </optgroup>
       </select>
       <input ref={titleRef} className={styles.input} type="text" name="title" placeholder="title" />
       <input ref={emailRef} className={styles.input} type="text" name="email" placeholder="email" />
